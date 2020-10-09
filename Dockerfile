@@ -8,7 +8,7 @@ RUN apk update && apk add --no-cache \
  
   && apk add aws-cli \
   
-  && apk add nano wget unzip \
+  && apk add nano wget unzip openssh \
   
   && wget https://releases.hashicorp.com/terraform/${TERRAFORM_VER}/terraform_${TERRAFORM_VER}_linux_amd64.zip \
   && unzip terraform_${TERRAFORM_VER}_linux_amd64.zip \
