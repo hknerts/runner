@@ -1,3 +1,5 @@
+[![dockeri.co](https://dockeri.co/image/globalinfra/runner)](https://hub.docker.com/r/globalinfra/runner)
+
 # Alpine based CI/CD runner image
 
 ### terraform - tfenv (0.11.14 / 0.12.20 / 0.13.2)
