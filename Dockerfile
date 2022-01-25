@@ -1,5 +1,5 @@
 FROM alpine:latest
-ARG TERRAFORM_VER="0.13.2"
+ARG TERRAFORM_VER="1.0.0"
 ARG PYTHON_VER="3.8"
 RUN apk update && apk add --no-cache \
   
@@ -33,5 +33,6 @@ RUN apk update && apk add --no-cache \
     echo 'trust-tfenv: yes' > /tfenv/use-gpgv && \
 	  tfenv install 0.11.14 && \
 	  tfenv install 0.13.2 && \
+	  tfenv install 1.0.0 && \
     tfenv install 0.12.20 && \
-	  tfenv use 0.12.20
+	  tfenv use 1.0.0
