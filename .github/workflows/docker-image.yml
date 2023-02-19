@@ -17,6 +17,6 @@ jobs:
         TOKEN: ${{ secrets.HUB_TOKEN }}
       run: docker login -u globalinfra --password "$TOKEN"
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag globalinfra/runner:$GITHUB_REF
-
-        
+      run: docker build --tag "globalinfra/runner:$GITHUB_REF" .
+    - name: Push the Docker image
+      run: docker push "globalinfra/runner:$GITHUB_REF" .
