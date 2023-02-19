@@ -16,17 +16,15 @@ jobs:
       env:
         TOKEN: ${{ secrets.HUB_TOKEN }}
       run: docker login -u globalinfra --password "$TOKEN"
-    - name: echo
-      run: echo "$GITHUB_REF"
     - name: Build the master Docker image
       run: docker build -t "globalinfra/runner:latest" . 
-      if: startsWith(github.ref, 'refs/heads/master')
+      if: endsWith(github.ref, 'refs/heads/master')
     - name: Push the master Docker image
       run: docker push "globalinfra/runner:latest"
-      if: startsWith(github.ref, 'refs/heads/master')
+      if: endssWith(github.ref, 'refs/heads/master')
     - name: Build the Tag Docker image
       run: docker build -t "globalinfra/runner:$GITHUB_REF_NAME" .
-      if: startsWith(github.ref_name, 'refs/tags/v*')
+      if: startsWith(github.ref_name, 'refs/tags/v')
     - name: Push the Tag Docker image
       run: docker push "globalinfra/runner:$GITHUB_REF_NAME"
-      if: startsWith(github.ref_name, 'refs/tags/v*')
+      if: startsWith(github.ref_name, 'refs/tags/v')
