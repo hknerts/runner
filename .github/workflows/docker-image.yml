@@ -12,11 +12,9 @@ jobs:
     environment: prod
     steps:
     - uses: actions/checkout@v3
+    - name: Login Hub
       with:
         repo-token: ${{ secrets.HUB_TOKEN }}
-    - name: Login Hub
-      env: 
-        TOKEN: ${{ secrets.HUB_TOKEN }}
       run: docker login -u globalinfra --password $repo-token
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag globalinfra/runner:$GITHUB_REF
