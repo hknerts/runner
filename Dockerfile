@@ -11,5 +11,6 @@ RUN apk update && apk add --no-cache \
   && curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl \
   && chmod +x kubectl \
   && mv kubectl /usr/local/bin/ \
-  && curl -L https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/install.sh | bash \
-  && /usr/local/bin/tfswitch 1.3.9
+  && git clone --depth=1 https://github.com/tfutils/tfenv.git ~/.tfenv  \
+  && ln -s ~/.tfenv/bin/* /usr/local/bin \
+  && tfenv use 1.3.9

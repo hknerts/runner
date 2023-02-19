@@ -3,7 +3,7 @@
 # Alpine based CI/CD runner image (3.17.2)
 
 ### terraform (1.3.9)  
-### tfswitch (0.13.1308)
+### tfenv (3.0.0)
 ### awscli (1.25.97)
 ### python3 (3.10.10-r0)
 ### py3-pip (22.3.1-r1 )
