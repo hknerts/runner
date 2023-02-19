@@ -1,5 +1,9 @@
 name: Docker Image CI
 
+env:
+  # Setting an environment variable with the value of a configuration variable
+  env_var: ${{ vars.G }}
+
 on:
   push:
     branches: [ "master" ]
@@ -7,12 +11,13 @@ on:
       - '*'
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
+    - name: Login Hub
+      run: docker login -u globalinfra --password ${{ secrets.HUB_TOKEN }}
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag globalinfra/runner:{{ github.ref }}
+      run: docker build . --file Dockerfile --tag globalinfra/runner:$GITHUB_REF
+
+        
