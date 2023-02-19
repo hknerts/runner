@@ -24,7 +24,7 @@ jobs:
       if: endsWith(github.ref, 'refs/heads/master')
     - name: Build the Tag Docker image
       run: docker build -t "globalinfra/runner:$GITHUB_REF_NAME" .
-      if: startsWith(github.ref_name, 'refs/tags/v')
+      if: startsWith(github.ref, 'refs/tags/v')
     - name: Push the Tag Docker image
       run: docker push "globalinfra/runner:$GITHUB_REF_NAME"
-      if: startsWith(github.ref_name, 'refs/tags/v')
+      if: startsWith(github.ref, 'refs/tags/v')
