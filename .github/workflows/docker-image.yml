@@ -1,9 +1,5 @@
 name: Docker Image CI
 
-env:
-  # Setting an environment variable with the value of a configuration variable
-  env_var: ${{ vars.G }}
-
 on:
   push:
     branches: [ "master" ]
