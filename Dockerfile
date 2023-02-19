@@ -12,4 +12,4 @@ RUN apk update && apk add --no-cache \
   && chmod +x kubectl \
   && mv kubectl /usr/local/bin/ \
   && curl -L https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/install.sh | bash \
-  && tfswitch 1.3.9
+  && /usr/local/bin/tfswitch 1.3.9
