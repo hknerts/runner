@@ -25,7 +25,12 @@ RUN set -euxo pipefail && \
         curl \
         bash \
         gnupg && \
-    rm -rf /var/cache/apk/*
+    echo "Cleaning up caches and unnecessary files..." && \
+    rm -rf /var/cache/apk/* && \
+    rm -rf /usr/share/man/* && \
+    rm -rf /usr/share/doc/* && \
+    rm -rf /tmp/* && \
+    true
 
 # Install kops and kubectl
 RUN set -euxo pipefail && \
