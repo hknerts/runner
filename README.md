@@ -1,8 +1,6 @@
 # CI/CD Runner Image with Updated Tools (Alpine 3.22.0)
 
 [![dockeri.co](https://dockeri.co/image/globalinfra/runner)](https://hub.docker.com/r/globalinfra/runner)
-*(Note: The Docker Hub image above may not reflect the latest changes in this repository. Build locally for the most up-to-date version.)*
-
 ## Overview
 
 This repository provides a Dockerfile to build a lightweight CI/CD runner image based on Alpine Linux. It comes pre-installed with a suite of essential development and infrastructure management tools, all updated to their recent stable versions. This image is ideal for use in CI/CD pipelines that require these tools for building, testing, and deploying applications.
